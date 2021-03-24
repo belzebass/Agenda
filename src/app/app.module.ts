@@ -18,12 +18,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp({
-      apiKey: "AIzaSyCv6KzWwdpLnL2vDxtI4uFWf3RZ1SwhjEo",
-      authDomain: "agenda-nd7.firebaseapp.com",
-      projectId: "agenda-nd7",
-      storageBucket: "agenda-nd7.appspot.com",
-      messagingSenderId: "839591463719",
-      appId: "1:839591463719:web:1b56ec1c19939da74df702"
+      apiKey: 'AIzaSyCv6KzWwdpLnL2vDxtI4uFWf3RZ1SwhjEo',
+      authDomain: 'agenda-nd7.firebaseapp.com',
+      projectId: 'agenda-nd7',
+      storageBucket: 'agenda-nd7.appspot.com',
+      messagingSenderId: '839591463719',
+      appId: '1:839591463719:web:1b56ec1c19939da74df702'
     }),
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),

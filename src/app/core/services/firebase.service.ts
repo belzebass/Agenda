@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AngularFireAuth} from "@angular/fire/auth";
+import {AngularFireAuth} from '@angular/fire/auth';
 
 
 @Injectable({
@@ -31,7 +31,7 @@ export class FirebaseService {
   }
 
   // Logout
-  logout() {
+  logout(): void {
     this.firebaseAuth.signOut()
       .then(() => {
           localStorage.removeItem('user');
@@ -42,4 +42,11 @@ export class FirebaseService {
         });
   }
 
+  getIfUserIsLoggedIn(): Promise<boolean> {
+    return new Promise(resolve => {
+      this.firebaseAuth.onAuthStateChanged((user) => {
+        resolve(user != null);
+      });
+    });
+  }
 }

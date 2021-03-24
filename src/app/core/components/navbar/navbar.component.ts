@@ -1,7 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FirebaseService} from '../../services/firebase.service';
 import {DialogComponent} from '../dialog/dialog.component';
-import {MatDialog} from "@angular/material/dialog";
+import {MatDialog} from '@angular/material/dialog';
+import {AuthService} from '../../services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -19,23 +21,25 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  @Output() isLogout = new EventEmitter<void>()
+  @Output() isLogout = new EventEmitter<void>(); // can be removed
   disabled: any;
   route: any;
 
-  constructor(public firebaseService: FirebaseService,
-              public dialog: MatDialog) {
+  constructor(public authService: AuthService,
+              public dialog: MatDialog,
+              public router: Router) {
   }
 
-  openDialog() {
+  openDialog(): void {
     this.dialog.open(DialogComponent);
   }
 
   ngOnInit(): void {
   }
 
-  logout() {
-    this.firebaseService.logout();
-    this.isLogout.emit();
+  logout(): void {
+    console.log('ASDASD');
+    this.authService.logout();
+    this.router.navigate(['home']);
   }
 }
