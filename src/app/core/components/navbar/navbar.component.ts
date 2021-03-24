@@ -26,8 +26,7 @@ export class NavbarComponent implements OnInit {
   route: any;
 
   constructor(public authService: AuthService,
-              public dialog: MatDialog,
-              public router: Router) {
+              public dialog: MatDialog) {
   }
 
   openDialog(): void {
@@ -38,8 +37,6 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(): void {
-    console.log('ASDASD');
     this.authService.logout();
-    this.router.navigate(['home']);
   }
 }
