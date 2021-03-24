@@ -1,0 +1,22 @@
+<div class="forgetpwd" fxFill fxLayout="row" fxLayoutAlign="space-around stretch">
+
+  <mat-card class="mat-elevation-z4">
+    <mat-card-header fxLayoutAlign="center">
+      <mat-card-title><h1> Agenda </h1></mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p class="reset"> Enter your email address and we'll reset your password </p>
+      <mat-form-field appearance="fill">
+        <input class="login" type="text" matInput #emailLogin placeholder="Email"/>
+        <mat-icon matSuffix>mail</mat-icon>
+      </mat-form-field>
+
+      <p>
+        <button mat-raised-button color="primary">Send</button>
+      </p>
+      <p><span> You have an account? </span> <a routerLink="/"> Login! </a></p>
+    </mat-card-content>
+  </mat-card>
+
+</div>

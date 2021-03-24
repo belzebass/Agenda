@@ -1,0 +1,41 @@
+.register-page > mat-card {
+  width: 360px;
+  height: 400px;
+}
+
+.mat-card {
+  width: auto;
+  margin: 10% auto;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.mat-card-content {
+  margin: 10px;
+}
+
+.mat-form-field, .mat-checkbox {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.mat-raised-button {
+  background: linear-gradient(to right, #FF105F, #FFAD06);
+  width: 100%;
+}
+
+.text-muted {
+  color: gray;
+  text-align: center;
+}
+
+.mat-firstname {
+  padding-right: 2%;
+  width: 48%;
+}
+
+.mat-lastname {
+  padding-left: 2%;
+  width: 48%;
+}

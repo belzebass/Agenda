@@ -1,0 +1,49 @@
+<mat-sidenav-container fxLayout="row" fxFlexAlign="center">
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav mode="over">
+    <h2> Agenda </h2>
+    <mat-divider></mat-divider>
+    <mat-list role="list">
+      <mat-selection-list fxLayoutAlign="space-around stretch" [multiple]="false">
+        <mat-list-option>
+          <a [routerLink]="route" routerLinkActive="active" class="menu-link"
+             [class.disabled]="disabled ? true : null"
+             (click)="check($event)">
+            <mat-icon mat-list-icon class="mail">mail</mat-icon>
+            <div mat-line class="contact">Contact</div>
+          </a>
+        </mat-list-option>
+      </mat-selection-list>
+    </mat-list>
+  </mat-sidenav>
+
+  <!-- Nav-bar -->
+  <mat-sidenav-content fxLayout="row">
+    <mat-toolbar>
+      <mat-toolbar-row [class.mat-elevation-z2]="!isActive">
+        <div fxFlex="1 0 auto">
+          <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+
+        <div fxFlex="1 0 auto">
+          <span class="title"> Agenda </span>
+        </div>
+
+        <div fxFlex="0 1 auto">
+          <!-- Dialog -->
+          <button mat-raised-button (click)="openDialog()">
+            <mat-icon>account_circle</mat-icon>
+            <span> Account </span>
+          </button>
+          <!-- Logout -->
+          <button mat-raised-button class="logout" (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span> Logout </span>
+          </button>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>
